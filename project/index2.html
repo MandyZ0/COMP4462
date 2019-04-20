@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title> D3 tutorial </title>
+        <script src = "http://d3js.org/d3.v3.min.js"> </script>
+    </head>
+
+    <body>
+        <!-- <p>This is a paragraph</p> -->
+        <script>
+            // DOM elements < data elements (enter) // (enter) select the data elements that don't have DOM elements
+            // DOM elements > data elements (exit)  // (exit) select the DOM elements that don't have data elements
+            // DOM elements = data elements (update) 
+            
+            var data = [10];
+
+            var canvas = d3.select('body')
+                            .append("svg")
+                                .attr("width", 500)
+                                .attr("height", 500)
+
+            var circle = canvas.append('circle')
+                                .attr('cx', 50)
+                                .attr('cy', 50)
+                                .attr('r', 25);
+            circle.transition()
+                    .duration(1000)
+                    .attr("cx", 150)
+                    .each("start", function() {d3.select(this).attr("fill", "red")}) // make sth else happen
+            
+
+        </script>
+    </body>
+</html>
